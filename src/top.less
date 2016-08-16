@@ -1,0 +1,41 @@
+/* Top */
+#top {
+	&.bgmoss {
+		color: @brand-light-gray;
+		a { color:@brand-light-gray; }
+		ol.breadcrumb {
+			margin:0; 
+			padding:5px 0;
+			li {
+				font-size: 10px;
+				text-transform: uppercase;
+				font-weight: 700;
+				margin-left: -2px;
+
+				&:nth-child(1)::before {
+					content: '';
+				}
+
+				&::before {
+					content: '>';
+				}
+
+			}
+
+		}
+
+		.social-icons {
+			i {padding-right: 15px;}
+		}
+
+		.email-address, .phone-number {
+			font-size: 10px;
+		}
+
+		.aim-logo {
+			img {
+				display:block;
+			}
+		}
+	}
+}

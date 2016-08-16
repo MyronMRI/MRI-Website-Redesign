@@ -1,0 +1,173 @@
+/* Image Accordion */
+
+ul.og-grid { padding: 0; }
+.og-grid {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+	ul { padding: 0; }
+	li {
+		display: inline-block;
+		margin: 10px 0;
+		vertical-align: top;
+		text-align: left;
+		@media screen and (max-width:@screen-xs) {
+			width:100%;
+		}
+		@media screen and (min-width:@screen-sm) and (max-width:@screen-md) {
+			width:50%;
+		}
+		@media screen and (min-width:@screen-lg) {
+			width:33%;
+		}
+	}
+}
+.og-grid li > a,
+.og-grid li > a img {
+	border: none;
+	outline: none;
+	display: block;
+	position: relative;
+	width:auto;
+	max-width:100%;
+	margin-bottom: 15px;
+	text-decoration: none;
+}
+.og-grid li.og-expanded > a::after {
+	top: auto;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #143a4d;
+	border-width: 15px;
+	left: 50%;
+	margin: -15px 0 0 -15px;
+}
+.og-expander {
+	position: absolute;
+	background:url('/_img/bg-roulette.jpg') no-repeat;
+	background-size:cover;
+	background-position:center right;
+	top: auto;
+	left: 0;
+	width: 100%;
+	margin-top: 10px;
+	text-align: left;
+	height: 100%;
+	overflow: hidden;
+}
+
+.og-expander-inner {
+	padding: 50px 30px;
+	@media screen and (max-width:@screen-xs) {
+		padding: 15px 10px;
+	}
+	height: 100%;
+}
+.og-close {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	z-index:999;
+}
+
+.og-close::before,
+.og-close::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	height: 1px;
+	background: #fff;
+	transform: rotate(45deg);
+}
+
+.og-close::after {
+	transform: rotate(-45deg);
+}
+.og-close:hover::before,
+.og-close:hover::after {
+	background: #fff;
+}
+.og-fullimg {
+	width:33%;
+	@media screen and (max-width:@screen-xs) {
+		width:100%;
+	}
+	float:left;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	padding-right: 2%;
+}
+.og-details {
+	width: 65%;
+	@media screen and (max-width:@screen-xs) {
+		width:100%;
+	}
+	float: left;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.og-details {
+	padding: 0 40px 0 20px;
+	color:@brand-white;
+}
+
+.og-fullimg {
+	text-align: center;
+}
+
+.og-fullimg img {
+	display: inline-block;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+
+.og-details a {
+	color:@brand-lightest-blue;
+}
+
+.og-loading {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ddd;
+	box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ccc;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+	animation: loader 0.5s infinite ease-in-out both;
+}
+
+@keyframes loader {
+	0% { background: #ddd; }
+	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+@media screen and (max-width: 830px) {
+
+	.og-expander h3 { font-size: 32px; }
+	.og-expander p { font-size: 13px; }
+	.og-expander a { font-size: 12px; }
+
+}
+
+@media screen and (max-width: 650px) {
+
+	.og-fullimg { display: none; }
+	.og-details { float: none; width: 100%; }
+	
+}
+
