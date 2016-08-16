@@ -77,7 +77,7 @@
 <div class="container">
 	<div class="row">
     		<div class="col-md-6 col-lg-5">
-            <div class="panel bgorange-transparent ultraheading white xs-pl-30 xs-pr-30 flex vertical-center largecaption-height text-uppercase wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0s">
+            <div class="panel bgorange-transparent ultraheading samesize white xs-pl-30 xs-pr-30 flex vertical-center largecaption-height text-uppercase wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0s">
                     <div><strong><?php echo htmlencode($servicesRecord['service_tagline_1']) ?></strong><br><?php echo htmlencode($servicesRecord['service_tagline_2']) ?></div>
             </div>
         </div>
@@ -113,10 +113,10 @@
 						<?php echo ($servicesRecord['body_copy']) ?>
                     </div>
                     <div class="col-xs-12 visible-lg" style="margin-top:55px"></div>
-                    <div class="col-xs-12 col-sm-6 text-right-not-xs text-left-xs xs-mt-15">
+                    <div class="col-xs-12 col-sm-6 text-right-not-xs text-center-xs xs-mt-15">
 						<a class="btn btn-black"><?php echo htmlencode($servicesRecord['body_call_to_action_1']) ?></a>
                     </div>
-                    <div class="col-xs-12 col-sm-6 text-left-not-xs text-left-xs xs-mt-15">
+                    <div class="col-xs-12 col-sm-6 text-left-not-xs text-center-xs xs-mt-15">
 						<a class="btn btn-light-blue"><?php echo htmlencode($servicesRecord['body_call_to_action_2']) ?></a>
                     </div>
 				</div>

@@ -24,7 +24,6 @@
 <html lang="en">
 <head>
 <?php include "/_includes/head.php" ?>
-<title><?php echo htmlencode($servicesRecord['title']) ?></title>
 </head>
 <body>
 <div class="page">
@@ -38,7 +37,7 @@
     =========================================================-->
     <main>
         <section class="well bgcream">
-        		<div class="container">
+        		<div class="container-fluid">
         			<div class="row">
 					<div class="col-lg-12">
                     		<div class="media">
@@ -74,35 +73,33 @@
 		<section class="bg-fixed-right" style="background-image:url(<?php echo htmlencode($upload['urlPath']) ?>);">
         <?php endforeach ?>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-    		<div class="col-md-6 col-lg-5">
-            <div class="panel bgorange-transparent ultraheading white xs-pl-30 xs-pr-30 flex vertical-center largecaption-height text-uppercase wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0s">
+    		<div class="col-sm-5">
+            <div class="panel bgorange-transparent pull-right ultraheading samesize white xs-pl-30 xs-pr-30 flex vertical-center text-uppercase largecaption wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0s">
                     <div><strong><?php echo htmlencode($servicesRecord['service_tagline_1']) ?></strong><br><?php echo htmlencode($servicesRecord['service_tagline_2']) ?></div>
             </div>
         </div>
-    		<div class="col-md-6 col-lg-7">
+    		<div class="col-lg-7">
 			<!-- This is empty -->
         </div>
-	</div>
-</div>
-
-<div class="bgblack-transparent">
-<div class="container">
-	<div class="row">
-		<div id="adjustleft" class="col-md-6 col-lg-5">
-			<?php foreach ($servicesRecord['service_intro_image'] as $index => $upload): ?>
-              <?php if ($index >= 1) { continue; } // limit uploads shown ?>
-                <div class="panel largecaption-height bgcover wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0.3s" style="background-image:url('<?php echo htmlencode($upload['urlPath']) ?>');"></div>
-            <?php endforeach ?>
+        <div class="clearfix"></div>
+    		<div class="col-sm-5 bgblack-transparent">
+        <?php foreach ($servicesRecord['service_intro_image'] as $index => $upload): ?>
+          <?php if ($index >= 1) { continue; } // limit uploads shown ?>
+			<div class="panel largecaption-height bgcover wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0.3s" style="background-image:url('<?php echo htmlencode($upload['urlPath']) ?>');"></div>
+        <?php endforeach ?>
         </div>
-		<div id="adjustright" class="col-md-6 col-lg-7">
-        <div class="panel largecaption-height flex vertical-center">
-        <div class="white text-center"><sup><i class="fa fa-quote-left lightest-blue fa-2x" aria-hidden="true"></i></sup><span class="testimonial-md"><?php echo htmlencode($servicesRecord['testimonial_quote_1']) ?></span><sup><i class="fa fa-quote-right lightest-blue fa-2x" aria-hidden="true"></i></sup><p class="text-right gold xs-mt-15"><?php echo htmlencode($servicesRecord['testimonial_quote_byline_1']) ?></p></div></div></div>
-	</div>
+    		<div class="col-sm-7 bgblack-transparent">
+			<div class="panel flex vertical-center largecaption-height">
+            		<div class="row">
+            			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-9"><div class="white text-center"><sup><i class="fa fa-quote-left lightest-blue fa-2x" aria-hidden="true"></i></sup><span class="testimonial-md"><?php echo htmlencode($servicesRecord['testimonial_quote_1']) ?></span><sup><i class="fa fa-quote-right lightest-blue fa-2x" aria-hidden="true"></i></sup><p class="text-right gold xs-mt-15"><?php echo htmlencode($servicesRecord['testimonial_quote_byline_1']) ?></p></div></div>
+            			<div class="col-xs-12 col-sm-4"></div>
+            		</div>
+			</div>
+        </div>
+    </div>
 </div>
-</div>
-
         </section>
 
 		<div class="well-2 bgcream">
@@ -112,11 +109,10 @@
                     		<h2 class="text-uppercase light-blue"><strong><?php echo htmlencode($servicesRecord['body_header']) ?></strong></h2>
 						<?php echo ($servicesRecord['body_copy']) ?>
                     </div>
-                    <div class="col-xs-12 visible-lg" style="margin-top:55px"></div>
-                    <div class="col-xs-12 col-sm-6 text-right-not-xs text-left-xs xs-mt-15">
+                    <div class="col-xs-12 col-sm-6 text-right-not-xs text-center-xs xs-mt-15">
 						<a class="btn btn-black"><?php echo htmlencode($servicesRecord['body_call_to_action_1']) ?></a>
                     </div>
-                    <div class="col-xs-12 col-sm-6 text-left-not-xs text-left-xs xs-mt-15">
+                    <div class="col-xs-12 col-sm-6 text-left-not-xs text-center-xs xs-mt-15">
 						<a class="btn btn-light-blue"><?php echo htmlencode($servicesRecord['body_call_to_action_2']) ?></a>
                     </div>
 				</div>
@@ -137,6 +133,7 @@
 
     </main>
 
+
     <!--========================================================
                               CONTACT
     =========================================================-->
@@ -154,6 +151,12 @@
 <script>
 $(document).ready(function() {
 	$('#menu-services').addClass('active');
+});
+</script>
+<script>
+$(document).ready(function() {
+	var fluidchildren = $('#fluid-children').outerHeight();
+	$('#fluid-parent').css({ 'height':fluidchildren });
 });
 </script>
 </body>

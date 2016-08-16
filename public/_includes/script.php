@@ -18,7 +18,7 @@ $(window).scroll(function() {
 <!-- Adjust vertical alignment of media items -->
 <script>
 $(document).ready(function() {
-	if ($(window).width() >= 1024) {
+	if ($(window).width() > 1024) {
 		$('.media').find('.media-left').addClass('media-middle');
 	} else {
 		$('.media').find('.media-left').removeClass('media-middle');
@@ -36,5 +36,20 @@ $( document ).ready(function() {
     maxHeight = Math.max.apply(null, heights);
 
     $(".sameheight").height(maxHeight);
+});
+</script>
+
+<!-- Offset rows for fluid containers -->
+<script>
+$(document).ready(function(){
+	if ($(window).width() >= 768) {
+		var wwidth = $(window).width();
+		var cwidth = $('.container').width();
+		var coffset = -((wwidth-cwidth)/2);
+		var pwidth = $('#adjustleft').find('.panel').width();
+		$('#adjustleft').css({ 'marginLeft':coffset })
+		$('#adjustleft').find('.panel').css({ 'width':pwidth+(-1*coffset)});
+		$('#adjustright').css({ 'marginLeft':(-1*coffset) });
+	}
 });
 </script>

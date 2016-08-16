@@ -3595,15 +3595,17 @@ fieldset[disabled] .btn-danger.focus {
 }
 .btn-black {
   min-width: 175px;
-  padding: 10px;
+  padding: 20px 12px;
   background: #000;
+  font-size: 13px;
 }
 .btn-black:hover {
   background: #eeeeee;
 }
 .btn-light-blue {
   min-width: 175px;
-  padding: 10px;
+  padding: 20px 12px;
+  font-size: 13px;
   background: #67a3bd;
 }
 .btn-light-blue:hover {
@@ -7558,6 +7560,11 @@ header .brand {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+/* Set Telephone number as Europa */
+.telephone-number {
+  font-family: europa, sans-serif;
+  font-weight: 700;
 }
 /* Special Font Sizes */
 @media screen and (min-width: 992px) {

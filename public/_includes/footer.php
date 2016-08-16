@@ -6,7 +6,7 @@
                 <!-- Start Footer on Desktop Up -->
                 <div class="visible-lg">
 					<div class="flex vertical-bottom">
-						<div><strong class="ultraheading"><a href="tel:7023613850" class="white">702.361.3850</a></strong></div>    
+						<div><strong class="ultraheading"><a href="tel:7023613850" class="telephone-number white">702.361.3850</a></strong></div>    
                         <div><span class="megaheading">LAS VEGAS</span></div>
                         <div><span class="megaheading">ATLANTIC CITY</span></div>
                         <div><span class="megaheading">PHILADELPHIA</span></div>
@@ -20,7 +20,7 @@
                 <!-- End Footer on Desktop Up -->
                 <!-- Start Footer on Mobile and Tablet -->
                 <div class="row hidden-lg text-center">
-                		<div class="col-xs-12"><strong class="ultraheading"><a href="tel:7023613850" class="white">702.361.3850</a></strong></div>
+                		<div class="col-xs-12"><strong class="ultraheading"><a href="tel:7023613850" class="telephone-number white">702.361.3850</a></strong></div>
                      <div class="col-xs-12"><span class="megaheading xs-pl-15 xs-pr-15">LAS VEGAS</span><div class="clearfix visible-xs"></div><span class="megaheading xs-pl-15 xs-pr-15">ATLANTIC CITY</span><div class="clearfix visible-xs"></div><span class="megaheading xs-pl-15 xs-pr-15">PHILADELPHIA</span></div>
                      <div class="col-xs-12"><i class="fa fa-facebook xs-pl-15 xs-pr-15" aria-hidden="true"></i><i class="fa fa-twitter xs-pl-15 xs-pr-15" aria-hidden="true"></i><i class="fa fa-linkedin xs-pl-15 xs-pr-15" aria-hidden="true"></i><i class="fa fa-google-plus xs-pl-15 xs-pr-15" aria-hidden="true"></i></div>   
                 </div>
@@ -29,12 +29,12 @@
         </div>
 	</div>
 </section>
-<section class="well">
+<section class="well bgcream">
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-6 text-center-xs text-left-not-xs">
         		<div class="row">
-                <div class="col-xs-12 megaheading samesize text-uppercase light-blue xs-mt-15 xs-mb-15 thin wow fadeInDown hide-anim" data-wow-delay="0s" data-wow-duration="1s">Services</div>
+                <div class="col-xs-12 megaheading samesize text-uppercase light-blue xs-mt-15 xs-mb-15 wow fadeInDown hide-anim" data-wow-delay="0s" data-wow-duration="1s">Services</div>
         			<div class="col-xs-12 col-sm-6 bullet-services wow fadeInUp hide-anim" data-wow-delay=".3s" data-wow-duration="1s">
 					<ul>
                     		<?php foreach ($productsRecords as $record): ?>
@@ -56,7 +56,7 @@
         </div>
 		<div class="col-xs-12 col-sm-6 text-center-xs text-left-not-xs">
         		<div class="row">
-                <div class="col-xs-12 megaheading samesize text-uppercase light-blue xs-mt-15 xs-mb-15 thin wow fadeInDown hide-anim" data-wow-delay=".9s" data-wow-duration="1s">Company</div>
+                <div class="col-xs-12 megaheading samesize text-uppercase light-blue xs-mt-15 xs-mb-15 wow fadeInDown hide-anim" data-wow-delay=".9s" data-wow-duration="1s">Company</div>
         			<div class="col-xs-12 col-sm-6 bullet-services wow fadeInUp hide-anim" data-wow-delay="1.2s" data-wow-duration="1s">
 					<ul>
 					  <li><a href="/bios.php">About Us</a></li>
