@@ -42,14 +42,17 @@ $( document ).ready(function() {
 <!-- Offset rows for fluid containers -->
 <script>
 $(document).ready(function(){
-	if ($(window).width() >= 768) {
+	if ($(window).width() >= 991) {
 		var wwidth = $(window).width();
 		var cwidth = $('.container').width();
 		var coffset = -((wwidth-cwidth)/2);
-		var pwidth = $('#adjustleft').find('.panel').width();
-		$('#adjustleft').css({ 'marginLeft':coffset })
-		$('#adjustleft').find('.panel').css({ 'width':pwidth+(-1*coffset)});
-		$('#adjustright').css({ 'marginLeft':(-1*coffset) });
+		var pwidth = $('#adjustleft, #adjustleft1').find('.panel').width();
+		$('#adjustleft, #adjustleft1').css({ 'marginLeft':coffset })
+		$('#adjustleft, #adjustleft1').find('.panel').css({ 'width':pwidth+(-1*coffset)});
+		$('#adjustright, #adjustright1').css({ 'marginLeft':(-1*coffset) });
 	}
 });
 </script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5228dad444d11fb9"></script>

@@ -40,7 +40,7 @@
     <main>
     
         <section class="well bgcream">
-			<div class="container">
+			<div class="container main_copy">
 				<div class="row">
 					<div class="col-xs-12">
                     		<h1 class="xs-mb-25">

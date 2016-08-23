@@ -3,8 +3,8 @@
 	<div class="container">
         <div class="row">
             <div class="col-xs-12 white">
-                <!-- Start Footer on Desktop Up -->
-                <div class="visible-lg">
+                <!-- Start Footer on Tablet Up -->
+                <div class="hidden-xs">
 					<div class="flex vertical-bottom">
 						<div><strong class="ultraheading"><a href="tel:7023613850" class="telephone-number white">702.361.3850</a></strong></div>    
                         <div><span class="megaheading">LAS VEGAS</span></div>
@@ -17,9 +17,9 @@
                         <div class="megaheading"><i class="fa fa-google-plus" aria-hidden="true"></i></div>
                     </div>
                 </div>
-                <!-- End Footer on Desktop Up -->
-                <!-- Start Footer on Mobile and Tablet -->
-                <div class="row hidden-lg text-center">
+                <!-- End Footer on Tablet Up -->
+                <!-- Start Footer on Mobile -->
+                <div class="row visible-xs text-center">
                 		<div class="col-xs-12"><strong class="ultraheading"><a href="tel:7023613850" class="telephone-number white">702.361.3850</a></strong></div>
                      <div class="col-xs-12"><span class="megaheading xs-pl-15 xs-pr-15">LAS VEGAS</span><div class="clearfix visible-xs"></div><span class="megaheading xs-pl-15 xs-pr-15">ATLANTIC CITY</span><div class="clearfix visible-xs"></div><span class="megaheading xs-pl-15 xs-pr-15">PHILADELPHIA</span></div>
                      <div class="col-xs-12"><i class="fa fa-facebook xs-pl-15 xs-pr-15" aria-hidden="true"></i><i class="fa fa-twitter xs-pl-15 xs-pr-15" aria-hidden="true"></i><i class="fa fa-linkedin xs-pl-15 xs-pr-15" aria-hidden="true"></i><i class="fa fa-google-plus xs-pl-15 xs-pr-15" aria-hidden="true"></i></div>   

@@ -35,6 +35,20 @@
     'loadUploads' => true,
     'allowSearch' => false,
   ));
+  
+  // load records from 'office_locations'
+  list($office_locationsRecords, $office_locationsMetaData) = getRecords(array(
+    'tableName'   => 'office_locations',
+    'loadUploads' => true,
+    'allowSearch' => false,
+  ));
+  
+  // load records from 'employment_categories'
+  list($employment_categoriesRecords, $employment_categoriesMetaData) = getRecords(array(
+    'tableName'   => 'employment_categories',
+    'loadUploads' => true,
+    'allowSearch' => false,
+  ));  
 
 ?>
 
@@ -66,11 +80,52 @@
                             <span class="adelle"><?php echo htmlencode($job_pageRecord['main_subheader']) ?></span>
                         </h1>
                         <?php echo $job_pageRecord['main_copy']; ?>
-						<?php foreach ($jobsRecords as $listRecord): ?>
-                        			<?php echo $listRecord['department:label'] ?><br>
-                                 <?php echo $listRecord['location:label'] ?><br>   
-								<a href="<?php echo htmlencode($listRecord['_link']) ?>"><?php echo htmlencode($listRecord['title']) ?></a><br/>
-                        <?php endforeach ?>
+                        <div class="xs-mb-10">&nbsp;</div>
+
+<!-- LISTINGS CATEGORIES -->
+<?php foreach ($employment_categoriesRecords as $record): ?>
+<?php $current_category = $record['title']; ?>
+
+
+<!-- LISTINGS OFFICES -->
+<?php foreach ($office_locationsRecords as $record): ?>
+<?php $current_office = $record['title']; ?>
+
+<!-- LISTING SECTION HEADER -->
+<?php foreach ($jobsRecords as $record): ?>
+<?php if (($record['department'] == $current_category) && ($record['location'] == $current_office)): ?>
+<div class="body_ul_employment xs-mb-40">
+<p class="h3 text-uppercase strong light-blue"><?php echo $current_category ?></p>
+<p class="h4 adelle xs-mt-5"><?php echo $current_office ?> Office</p>
+<ul class="body_ul_employment">
+<?php break; ?>
+<?php endif ?>
+<?php endforeach; ?>
+
+<!-- OPEN JOBS -->
+<?php foreach ($jobsRecords as $record): ?>
+<?php if (($record['department'] != $current_category)) { continue; } ?> 
+<?php if (($record['location'] != $current_office)) { continue; } ?>
+<li><a href="<?php echo $record['_link'] ?>"><?php echo $record['job_title'] ?></a></li>
+<?php endforeach ?>
+
+<!-- LISTING SECTION FOOTER -->
+<?php foreach ($jobsRecords as $record): ?>
+<?php if (($record['department'] == $current_category) && ($record['location'] == $current_office)): ?>
+</ul>
+</div>
+<?php break; ?>
+<?php endif ?>
+<?php endforeach; ?>
+
+<!-- LISTING SECTION ENDS -->
+
+<?php endforeach ?>
+
+<?php endforeach ?>
+
+ <!--LISTINGS END-->
+
                     </div>
 				</div>
 			</div>

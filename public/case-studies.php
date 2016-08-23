@@ -39,7 +39,8 @@
 <html lang="en">
 <head>
 <?php include "_includes/head.php" ?>
-<title></title>
+<link rel="stylesheet" href="/_libs/swipebox/css/swipebox.css">
+<title><?php echo htmlencode($detailRecord['title']) ?></title>
 </head>
 
 <body>
@@ -65,14 +66,15 @@
                     </div>
                     <!-- Start Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 col-md-5 text-right hidden-xs hidden-sm">
-                    		<a href="#" class="btn btn-light-blue xs-mt-25">View Video</a> <a href="#" class="btn btn-black xs-mt-25">View Firm Profile</a>
+                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
                     </div>
                     <!-- End Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 xs-mt-15 semi"><?php echo htmlencode($detailRecord['main_second_subheader']) ?></div>
                     <div class="col-xs-12 xs-mt-15 intro gray thin"><?php echo $detailRecord['main_intro']; ?></div>
                     <!-- Start Scorecard and Firm Profile buttons for Tablet Down -->
-					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 col-lg-offset-1 text-center-xs text-right-not-xs hidden-md hidden-lg"><a href="#" class="btn btn-light-blue xs-mt-25">View Video</a></div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 text-center-xs text-left-not-xs hidden-md hidden-lg"><a href="#" class="btn btn-black xs-mt-25">View Firm Profile</a></div>
+                    <div class="col-xs-12 text-left-xs text-center-not-xs hidden-md hidden-lg">
+                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
+                    </div>
                     <!-- End Scorecard and Firm Profile buttons for Tablet Down -->
 				</div>                
 			</div>
@@ -83,31 +85,35 @@
         			<div class="row">
                     <?php foreach ($case_studies_entriesRecords as $record): ?>
 					<div class="col-xs-12 col-sm-6 col-md-4 xs-mb-25 sameheight">
-                    		<?php foreach ($record['project_image_thumbnail'] as $index => $upload): ?>
-                    		<a href="#modal-<?php echo htmlencode($record['num']) ?>" class="various"><img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="center-block img-responsive xs-mb-15"></a><?php endforeach ?>
+                    		<?php foreach ($record['project_images'] as $index => $upload): ?>
+						<?php if ($index < 1): ?>
+                    		<a href="<?php echo htmlencode($upload['urlPath']) ?>" class="swipebox" rel="gallery-<?php echo htmlencode($record['num']) ?>">
+						<?php endif; ?>
+						<?php endforeach ?>
+                         <?php foreach ($record['project_image_thumbnail'] as $index => $upload): ?>   
+                            <img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="center-block img-responsive xs-mb-15">                            
+						</a>
+						<?php endforeach ?>
 						<p><?php echo htmlencode($record['property_name']) ?><br><span class="strong brown"><?php echo htmlencode($record['project_type']) ?></span></p>
-						<p>Share This</p>
+						<div class="pull-left xs-pt-5 xs-pr-15">Share This:</div> <!-- Go to www.addthis.com/dashboard to customize your tools --><div class="addthis_sharing_toolbox pull-left"></div>
 					</div>
                     <?php endforeach ?>
                 </div>
         		</div>
         </section>
         
-<!-- Start Full Bios -->
+<!-- Start Full Portfolios -->
+<div style="visibility:hidden; display:none;">
 <?php foreach ($case_studies_entriesRecords as $record): ?>
-
-        <div id="modal-<?php echo htmlencode($record['num']) ?>" class="bio-modal">
-        		<div class="container">
-        			<div class="row">
-        				<div class="col-sm-12 hidden-xs">
-                        <?php foreach ($record['project_images'] as $index => $upload): ?>
-                        <img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="center-block img-responsive xs-mb-15">
-                        <?php endforeach ?>
-					</div>
-        			</div>
-        		</div>
-		</div>
-<?php endforeach ?>        
+		<?php foreach ($record['project_images'] as $index => $upload): ?>
+        		<?php if ($index >= 1): ?>
+        		<a href="<?php echo htmlencode($upload['urlPath']) ?>" class="swipebox" rel="gallery-<?php echo htmlencode($record['num']) ?>">
+            		<img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="img-responsive">    
+			</a>
+            <?php endif; ?>
+        <?php endforeach ?>   
+<?php endforeach ?>
+</div>   
 <!-- End Full Bios -->
   		
         		
@@ -130,26 +136,30 @@ $(document).ready(function() {
 });
 </script>
 
-<!-- Fancybox -->
-<script type="text/javascript" src="/_libs/fancybox/jquery.fancybox.js?v=2.1.5"></script>
-<link rel="stylesheet" type="text/css" href="/_libs/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Swipebox -->
+<script src="/_libs/swipebox/js/jquery.swipebox.js"></script>
 
 <script>
 $(document).ready(function() {
-	$(".various").fancybox({
-		maxHeight	: 600,
-		fitToView	: true,
-		width		: '100%',
-		height		: '70%',
-		autoSize	: false,
-		closeClick	: false,
-		openEffect	: 'fade',
-		closeEffect	: 'fade'
-	});
+;( function( $ ) {
+	$('.swipebox').swipebox({ });
+} )( jQuery );
 });
 if ($(window).width() <= 768) {
 	$('.bio-modal .container').removeClass('container').addClass('container-fluid');
 }
+</script>
+
+<script>
+$(function(){
+  $(document.body)
+	  .on('click touchend','#swipebox-slider .current img', function(e){
+		  return false;
+	  })
+	  .on('click touchend','#swipebox-slider .current', function(e){
+		  $('#swipebox-close').trigger('click');
+	  });
+});
 </script>
 
 </body>

@@ -7,37 +7,40 @@
   foreach ($dirsToCheck as $dir) { if (@include_once("$dir$libraryPath")) { break; }}
   if (!function_exists('getRecords')) { die("Couldn't load viewer library, check filepath in sourcecode."); }
 
-  // load detail record from 'about_us'
-  list($about_usRecords, $about_usMetaData) = getRecords(array(
-    'tableName'   => 'about_us',
+  // load detail record from 'case_study_page'
+  list($case_study_pageRecords, $case_study_pageMetaData) = getRecords(array(
+    'tableName'   => 'case_study_page',
     'where'       => whereRecordNumberInUrl(1), // If no record # is specified then latest record is shown
     'loadUploads' => true,
     'allowSearch' => false,
     'limit'       => '1',
   ));
-  $detailRecord = @$about_usRecords[0]; // get first record
+  $detailRecord = @$case_study_pageRecords[0]; // get first record
   if (!$detailRecord) { dieWith404("Record not found!"); } // show error message if no record found
 
-  // load list records from 'about_us'
-  list($about_usRecords, $about_usMetaData) = getRecords(array(
-    'tableName'   => 'about_us',
+  // load list records from 'case_study_page'
+  list($case_study_pageRecords, $case_study_pageMetaData) = getRecords(array(
+    'tableName'   => 'case_study_page',
     'loadUploads' => false,
     'allowSearch' => false,
   ));
   
-  // load records from 'bios'
-  list($biosRecords, $biosMetaData) = getRecords(array(
-    'tableName'   => 'bios',
+  // load records from 'case_studies_entries'
+  list($case_studies_entriesRecords, $case_studies_entriesMetaData) = getRecords(array(
+    'tableName'   => 'case_studies_entries',
     'loadUploads' => true,
     'allowSearch' => false,
   ));
 
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <?php include "_includes/head.php" ?>
-<title><?php echo htmlencode($detailRecord['title']) ?></title>
+<link rel="stylesheet" href="/_libs/swipebox/css/swipebox.css">
+<title></title>
 </head>
 
 <body>
@@ -57,21 +60,20 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-7">
                     		<h1>
-                            <span class="h3 brown text-uppercase strong"><?php echo htmlencode($detailRecord['main_header']) ?></span><br>
-                            <span class="adelle"><?php echo htmlencode($detailRecord['main_subheader']) ?></span>
+                            <span class="h3 brown text-uppercase strong">Case Studies &amp; Creative Portfolio</span><br>
+                            <span class="adelle">Incite the gambler experience</span>
 						</h1>
                     </div>
                     <!-- Start Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 col-md-5 text-right hidden-xs hidden-sm">
-                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
+                    		<a href="#" class="btn btn-light-blue xs-mt-25">View Video</a> <a href="#" class="btn btn-black xs-mt-25">View Firm Profile</a>
                     </div>
                     <!-- End Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 xs-mt-15 semi"><?php echo htmlencode($detailRecord['main_second_subheader']) ?></div>
-                    <div class="col-xs-12 xs-mt-15 intro gray thin"><?php echo htmlencode($detailRecord['main_intro_copy']) ?></div>
+                    <div class="col-xs-12 xs-mt-15 intro gray thin"><?php echo $detailRecord['main_intro']; ?></div>
                     <!-- Start Scorecard and Firm Profile buttons for Tablet Down -->
-                    <div class="col-xs-12 text-left-xs text-center-not-xs hidden-md hidden-lg">
-                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
-                    </div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 col-lg-offset-1 text-center-xs text-right-not-xs hidden-md hidden-lg"><a href="#" class="btn btn-light-blue xs-mt-25">View Video</a></div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 text-center-xs text-left-not-xs hidden-md hidden-lg"><a href="#" class="btn btn-black xs-mt-25">View Firm Profile</a></div>
                     <!-- End Scorecard and Firm Profile buttons for Tablet Down -->
 				</div>                
 			</div>
@@ -80,38 +82,28 @@
         <section class="well bgcream">
         		<div class="container">
         			<div class="row">
-                    <?php foreach ($biosRecords as $record): ?>
+                    <?php foreach ($case_studies_entriesRecords as $record): ?>
 					<div class="col-xs-12 col-sm-6 col-md-4 xs-mb-25 sameheight">
-                    		<?php foreach ($record['bio_image'] as $index => $upload): ?>
-                    		<a href="#modal-<?php echo htmlencode($record['num']) ?>" class="various"><img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="center-block img-responsive xs-mb-15"></a>
-						<?php endforeach ?>
-						<p><span class="thin"><?php echo htmlencode($record['name']) ?></span><br><span class="semi light-blue"><?php echo htmlencode($record['position']) ?></span></p>
-						<p><a href="<?php echo htmlencode($record['linkedin']) ?>" target="_blank"><i class="fa fa-linkedin light-blue"></i></a> <a href="mailto:<?php echo htmlencode($record['email']) ?>"><i class="fa fa-envelope light-blue" aria-hidden="true"></i></a></p>
+                    		<?php foreach ($record['project_image_thumbnail'] as $index => $upload): ?>
+                    		<a href="#modal-<?php echo htmlencode($record['num']) ?>" class="swipebox"><img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="center-block img-responsive xs-mb-15"></a><?php endforeach ?>
+						<p><?php echo htmlencode($record['property_name']) ?><br><span class="strong brown"><?php echo htmlencode($record['project_type']) ?></span></p>
+						<p>Share This</p>
 					</div>
                     <?php endforeach ?>
                 </div>
         		</div>
         </section>
         
-<!-- Start Full Bios -->
-<?php foreach ($biosRecords as $record): ?>
+<!-- Start Full Portfolios -->
+<?php foreach ($case_studies_entriesRecords as $record): ?>
 
         <div id="modal-<?php echo htmlencode($record['num']) ?>" class="bio-modal">
-        		<div class="container">
+        		<div class="container-fluid">
         			<div class="row">
-        				<div class="col-sm-12 col-sm-4 hidden-xs">
-                        <?php foreach ($record['bio_image'] as $index => $upload): ?>
+        				<div class="col-sm-12 hidden-xs">
+                        <?php foreach ($record['project_images'] as $index => $upload): ?>
                         <img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="center-block img-responsive xs-mb-15">
                         <?php endforeach ?>
-					</div>
-        				<div class="col-xs-12 col-sm-8">
-                            <p>
-                            <span class="h3 text-uppercase white strong"><?php echo htmlencode($record['name']) ?></span><br>
-                            <span class="h2 adelle light-blue semi"><?php echo htmlencode($record['position']) ?></span>
-                            </p>
-                            <div class="thin">
-                            <?php echo $record['bio']; ?>
-                            </div>
 					</div>
         			</div>
         		</div>
@@ -135,26 +127,18 @@
 <script src="/_js/modernizr.custom.js"></script>
 <script>
 $(document).ready(function() {
-	$('#menu-services').addClass('active');
+	$('#menu-casestudies').addClass('active');
 });
 </script>
 
-<!-- Fancybox -->
-<script type="text/javascript" src="/_libs/fancybox/jquery.fancybox.js?v=2.1.5"></script>
-<link rel="stylesheet" type="text/css" href="/_libs/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Swipebox -->
+<script src="/_libs/swipebox/js/jquery.swipebox.js"></script>
 
 <script>
 $(document).ready(function() {
-	$(".various").fancybox({
-		maxHeight	: 600,
-		fitToView	: true,
-		width		: '100%',
-		height		: '70%',
-		autoSize	: false,
-		closeClick	: false,
-		openEffect	: 'fade',
-		closeEffect	: 'fade'
-	});
+;( function( $ ) {
+	$('.swipebox').swipebox({ });
+} )( jQuery );
 });
 if ($(window).width() <= 768) {
 	$('.bio-modal .container').removeClass('container').addClass('container-fluid');

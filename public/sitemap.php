@@ -20,39 +20,41 @@
         <section class="well bgcream">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12">
-                    		<h1 class="xs-mb-25"><span class="h3 brown text-uppercase strong">Site Map</span><br>
-                    		<span class="adelle">Marketing Results, Inc.</span></h1>
+					<div class="col-xs-12 xs-mb-25">
+								<h1>
+									<span class="h3 brown text-uppercase strong">Site Map</span><br>
+									<span class="adelle">Marketing Results, Inc.</span>
+								</h1>
 					</div>
 					<div class="col-xs-12 col-sm-6">
-                    		<ul>
-                    			<li>Services
+						<h3 class="light-blue text-uppercase strong xs-mb-15">Services</h3>
                                 <ul>
-									<li><a href="/services/">Overview</a></li>
-                                    <li><a href="/services/database-marketing.php">Database Marketing</a></li>
-                                    <li><a href="/services/player-development.php">Player Development</a></li>
-                                    <li><a href="/services/market-research.php">Market Research</a></li>
-                                    <li><a href="/services/brand-positioning.php">Brand Positioning</a></li>
-                                    <li><a href="/services/casino-advertising.php">Casino Advertising</a></li>
-                                    <li><a href="/services/digital-services.php">Digital Services</a></li>
-                                </ul>
-							</li>
-                    		</ul>                           
-
+									<li><a href="/services.php">Overview</a></li>
+                                    
+                        <?php foreach ($servicesRecords as $record): ?>
+                        <li><a href="<?php echo $record['_link'] ?>"><?php echo htmlencode($record['title']) ?></a></li>
+                        <?php endforeach ?>
+                        
+                                </ul>                      
                   </div>
 					<div class="col-xs-12 col-sm-6">
-						<ul>
-                        		<li>Products
+						<h3 class="light-blue text-uppercase strong xs-mb-15">Products</h3>
                                 <ul>
-                                    <li><a href="/products/app.php">App</a></li>
-                                    <li><a href="/products/aim.php">AIM</a></li>
+									<?php foreach ($productsRecords as $record): ?>
+                                    <li><a href="<?php echo $record['_link'] ?>"><?php echo htmlencode($record['title']) ?></a></li>
+                                    <?php endforeach ?>
                                 </ul>  
-							</li>
-						</ul> 
                     		<ul>
-                            <li><a href="/about/index.php">About Us</a></li>
+							<?php foreach ($about_usRecords as $record): ?>
+                            <li><a href="<?php echo $record['_link'] ?>"><?php echo htmlencode($record['title']) ?></a></li>
+                            <?php endforeach ?>
+							<?php foreach ($job_pageRecords as $record): ?>
+                            <li><a href="<?php echo $record['_link'] ?>"><?php echo htmlencode($record['main_header']) ?></a></li>
+                            <?php endforeach ?>
                             <li><a href="/contact/index.php">Contact Us</a></li>
-                            <li><a href="/general/privacy-policy.php">Privacy Policy</a></li>
+							<?php foreach ($privacy_policyRecords as $record): ?>
+                            <li><a href="<?php echo $record['_link'] ?>"><?php echo htmlencode($record['title']) ?></a></li>
+                            <?php endforeach ?>
                             <li><a href="/sitemap.php">Site Map</a></li>
                     		</ul>
                     

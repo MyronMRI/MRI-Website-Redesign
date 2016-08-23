@@ -47,7 +47,9 @@
                             <span class="h3 brown text-uppercase strong"><?php echo htmlencode($privacy_policyRecord['main_header']) ?></span><br>
                             <span class="adelle"><?php echo htmlencode($privacy_policyRecord['main_subheader']) ?></span>
                         </h1>
+                        <div class="main_copy">
 						<?php echo $privacy_policyRecord['main_copy']; ?>
+                        </div>
                     </div>
 				</div>
 			</div>

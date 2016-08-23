@@ -3,8 +3,7 @@
     <div class="row hidden-xs">
       <div class="col-xs-5 col-sm-3">
         <ol class="breadcrumb">
-          <li class="active">Home</li>
-          <li>Breadcrumb</li>
+          <li class="active"><a href="/">Home</a></li>
         </ol>
       </div>
       <div class="col-xs-7 col-sm-9 text-right">

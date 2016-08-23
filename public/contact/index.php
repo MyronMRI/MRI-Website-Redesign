@@ -53,9 +53,21 @@
     =========================================================-->
 
 <section class="bglight-blue">
+
     <div class="container-fluid-no-gutter">
         <div class="row-no-gutter">
-                <div class="col-sm-7 col-sm-push-5 bgblack-transparent">
+                <div class="col-md-offset-1 col-md-4 col-lg-offset-3 col-lg-3">
+                <div class="panel white flex vertical-center xs-p-30 sm-p-30 md-p-0 text-center-xs text-center-sm text-left-md text-left-lg largecaption-height text-uppercase wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0s">
+                            <div class="xs-p-30 sm-p-30 md-p-0">
+                                <p class="h1 xs-mb-15"><a href="tel:7023613850" class="strong white telephone-number">702.361.3850</a></p>
+                                <p class="h3 thin xs-mb-15">Las Vegas</p>
+                                <p class="h3 thin xs-mb-15">Atlantic City</p>
+                                <p class="h3 thin xs-mb-15">Philadelphia</p>
+                                <p><a href="#" class="icon fa fa-at white fa-2x xs-mr-20"></a><a href="#" class="icon fa fa-facebook white fa-2x xs-mr-20"></a><a href="#" class="icon fa fa-twitter white fa-2x xs-mr-20"></a><a href="#" class="icon fa fa-linkedin white fa-2x xs-mr-20"></a><a href="#" class="icon fa fa-google-plus white fa-2x"></a></p>
+                            </div>
+                </div>
+            </div>
+                <div class="col-md-7 col-lg-6">
                         <!--RD Google Map-->
                         <div class="map" style="position:relative; left:0 !important;">
                             <div id="google-map" class="map_model"></div>
@@ -66,18 +78,11 @@
                             </ul>
                         </div>
                         <!--RD Google Map-->
-				</div>
-                <div class="col-sm-5 col-sm-pull-7">
-                    <div class="panel pull-right ultraheading samesize white xs-pl-30 xs-pr-30 flex vertical-center text-uppercase largecaption text-center-xs text-left-not-xs">
-                            <div>
-                                <p><a href="tel:7023613850" class="strong white">702.361.3850</a><br><span class="thin">Las Vegas<br>Atlantic City<br>Philadelphia</span></p>
-                                <p><a href="#" class="icon fa fa-facebook white"></a> <a href="#" class="icon fa fa-twitter white"></a> <a href="#" class="icon fa fa-google-plus white"></a></p>
-                            </div>
-                    </div>
-				</div>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
-    <div class="clearfix"></div>
+
 </section>
 
 

@@ -46,7 +46,12 @@
 							<?php if ($index >= 1) { continue; } // limit uploads shown ?>
                     			<div class="media-left media-middle"><img src="<?php echo htmlencode($upload['urlPath']) ?>" alt="" class="center-block"></div>
 						<?php endforeach ?>
-                    			<div class="media-body media-middle"><h1 class="h3 brown text-uppercase raleway"><strong><?php echo htmlencode($servicesRecord['main_header']) ?></strong></h1><h2 class="ultraheading adelle"><?php echo htmlencode($servicesRecord['main_subheader']) ?></h2></div>
+                    			<div class="media-body media-middle">
+								<h1>
+									<span class="h3 brown text-uppercase strong"><?php echo htmlencode($servicesRecord['main_header']) ?></span><br>
+									<span class="adelle"><?php echo htmlencode($servicesRecord['main_subheader']) ?></span>
+								</h1>
+							</div>
                     		</div>
                     </div>
         			</div>

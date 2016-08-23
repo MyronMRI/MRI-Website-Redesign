@@ -1,11 +1,6 @@
-<?php
-  /* STEP 1: LOAD RECORDS - Copy this PHP code block near the TOP of your page */
+<?php include "cms.php";
   
-  // load viewer library
-  $libraryPath = 'admin/lib/viewer_functions.php';
-  $dirsToCheck = array('D:/inetpub/wwwroot/www.marketingresults.net/','','../','../../','../../../');
-  foreach ($dirsToCheck as $dir) { if (@include_once("$dir$libraryPath")) { break; }}
-  if (!function_exists('getRecords')) { die("Couldn't load viewer library, check filepath in sourcecode."); }
+  /* STEP 1: LOAD RECORDS - Copy this PHP code block near the TOP of your page */
 
   // load records from 'services'
   list($servicesRecords, $servicesMetaData) = getRecords(array(
@@ -21,6 +16,26 @@
     'allowSearch' => false,
   ));
 
+  // load records from 'privacy_policy'
+  list($privacy_policyRecords, $privacy_policyMetaData) = getRecords(array(
+    'tableName'   => 'privacy_policy',
+    'loadUploads' => true,
+    'allowSearch' => false,
+  ));
+  
+  // load records from 'about_us'
+  list($about_usRecords, $about_usMetaData) = getRecords(array(
+    'tableName'   => 'about_us',
+    'loadUploads' => true,
+    'allowSearch' => false,
+  ));
+
+  // load records from 'job_page'
+  list($job_pageRecords, $job_pageMetaData) = getRecords(array(
+    'tableName'   => 'job_page',
+    'loadUploads' => true,
+    'allowSearch' => false,
+  ));
 
 ?>
 
