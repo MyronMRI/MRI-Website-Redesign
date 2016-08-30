@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php include "../_includes/head.php" ?>
+<link rel="stylesheet" href="/_libs/swipebox/css/swipebox.css">
 <title>Contact MRI</title>
 </head>
 
@@ -20,7 +21,7 @@
         <section class="well bgcream">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-md-7 col-lg-8">
+					<div class="col-xs-12 col-md-7">
                     		<h1><span class="h3 brown text-uppercase strong">visit us</span><br><span class="adelle">Locations serving the U.S. &amp; Canada</span></h1>
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 xs-mt-15">
@@ -31,12 +32,15 @@
                             </div>
 						</div>
                         <div class="row">
-							<div class="col-xs-12 xs-mt-25 text-center-xs text-left-not-xs"><a href="/contact/" class="btn btn-black">Request a Proposal</a> <a href="#" class="btn btn-light-blue visible-xs-inline-block visible-sm-inline-block">View Scorecard</a> <a href="#" class="btn btn-black visible-xs-inline-block visible-sm-inline-block">View Firm Profile</a></div>
+							<div class="col-xs-12 xs-mt-25 text-center-xs text-left-not-xs"><a href="/contact/" class="btn btn-black xs-mt-25">Request a Proposal</a> <a href="https://vimeo.com/75332249" class="btn btn-light-blue visible-xs-inline-block visible-sm-inline-block xs-mt-25 swipebox" rel="youtube2">View Video</a> <a href="/_img/mri_firm_profile_2015.pdf" target="_blank" class="btn btn-black visible-xs-inline-block visible-sm-inline-block xs-mt-25">View Firm Profile</a></div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-5 col-lg-4 text-right hidden-xs hidden-sm">
-                    		<a href="#" class="btn btn-light-blue xs-mt-25">View Video</a> <a href="#" class="btn btn-black xs-mt-25">View Firm Profile</a>
+                    <!-- Start Scorecard and Firm Profile buttons for Desktop Up -->
+                    <div class="col-xs-12 col-md-5 text-right hidden-xs hidden-sm">
+                    		<a href="https://vimeo.com/75332249" class="btn btn-light-blue xs-mt-5 swipebox" rel="youtube1">View Video</a>
+						<a href="/_img/mri_firm_profile_2015.pdf" target="_blank" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
                     </div>
+                    <!-- End Scorecard and Firm Profile buttons for Desktop Up -->
 				</div>
 			</div>
         </section>
@@ -97,6 +101,7 @@
 
 <?php include "../_includes/script.php" ?>
 <script src="../_js/script.js"></script>
+<script src="/_libs/swipebox/js/jquery.swipebox.js"></script>
 <script>
 $(document).ready(function() {
 	$('#menu-contact').addClass('active');
@@ -118,6 +123,11 @@ $('.post').each(function() {
 <!-- Hide the Contact Lines in the Footer -->
 <script>
 $('#footer-contact-info').addClass('hidden');
+</script>
+<script type="text/javascript">
+;( function( $ ) {
+	$('.swipebox').swipebox({autoplayVideos: true});
+} )( jQuery );
 </script>
 </body>
 </html>

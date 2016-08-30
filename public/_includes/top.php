@@ -11,8 +11,8 @@
       			<li><i class="fa fa-facebook" aria-hidden="true"></i></li>
       			<li><i class="fa fa-twitter" aria-hidden="true"></i></li>
       			<li><i class="fa fa-at" aria-hidden="true"></i></li>
-      			<li class="email-address"><a href="mailto:info@marketingresults.net">info@marketingresults.net</a></li>
-      			<li class="phone-number"><a href="tel:7023613850">702-361-3850</a></li>
+      			<li class="telephone-number" style="font-size:12px;"><a href="mailto:info@marketingresults.net">info@marketingresults.net</a></li>
+      			<li class="telephone-number" style="font-size:12px;"><a href="tel:7023613850">702-361-3850</a></li>
       			<li><a href="#"><img src="/_img/top-aimlogo.gif" alt=""></a></li>
       		</ul>
       </div>

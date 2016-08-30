@@ -39,17 +39,18 @@
 
 ?>
 
-<header class="subpage-mod">
+<div class="subpage-mod">
   <div id="stuck_container" class="stuck_container">
     <div class="container"> 
     	  <div class="row">
 			<div class="col-xs-12 col-sm-4 col-md-5">
-				<img src="/_img/logo.png" alt="" class="img-responsive">
+				<a href="/"><img src="/_img/logo.png" alt="" class="img-responsive xs-mt-15 md-mt-0"></a>
             </div>
             <div class="col-xs-12 col-sm-8 col-md-7">
                 <nav class="nav hidden-xs"> 
                   <!--Sf-menu-->
                   <ul class="sf-menu xs-mt-5" data-type="navbar">
+                  	<li class="visible-xs"><a href="/">Home</a></li>
                     <li id="menu-services">
                       <a href="#">Services</a>
                       <ul>
@@ -78,4 +79,4 @@
 		</div>
     </div>
   </div>
-</header>
+</div>

@@ -25,6 +25,25 @@
 <head>
 <?php include "/_includes/head.php" ?>
 <title><?php echo htmlencode($servicesRecord['title']) ?></title>
+<!-- Style to add offsets if the CMS field is filled -->
+<style>
+	@media screen and (max-width:1023px) {
+		.bg-fixed-right {
+			background-position:center right;
+		}
+	}
+	@media screen and (min-width:1024px) and (max-width:1279px) {
+		.bg-fixed-right {
+			background-position:center right -<?php echo htmlencode($servicesRecord['hero_image_offset']) ?>px !important;
+		}
+	}
+	@media screen and (min-width:1280px) {
+		.bg-fixed-right {
+			background-position:center right;
+		}
+	}
+
+</style>
 </head>
 <body>
 <div class="page">
@@ -59,7 +78,7 @@
         
             <div class="container text-sm-center">
                 <div class="row">
-                    <div class="col-md-4 col-sm-12 image-wrap-1 xs-mt-15">
+                    <div class="col-md-4 col-sm-12 image-wrap-1  xs-mt-25 md-mt-15">
                     
         <?php foreach ($servicesRecord['main_intro_image'] as $index => $upload): ?>
           <?php if ($index >= 1) { continue; } // limit uploads shown ?>
@@ -67,7 +86,7 @@
         <?php endforeach ?>
                     
                     </div>
-                    <div class="col-md-8 col-sm-12 intro gray xs-mt-15">
+                    <div class="col-md-8 col-sm-12 intro gray  xs-mt-25 md-mt-15">
                     		<?php echo ($servicesRecord['main_intro_copy']) ?>
                     </div>
                 </div>
@@ -76,13 +95,13 @@
 
         <?php foreach ($servicesRecord['service_hero_image'] as $index => $upload): ?>
           <?php if ($index >= 1) { continue; } // limit uploads shown ?>
-		<section class="bg-fixed-right" style="background-image:url(<?php echo htmlencode($upload['urlPath']) ?>);">
+		<section class="bg-fixed-right heroimage" style="background-image:url(<?php echo htmlencode($upload['urlPath']) ?>);">
         <?php endforeach ?>
 
 <div class="container">
 	<div class="row">
     		<div class="col-md-6 col-lg-5">
-            <div class="panel bgorange-transparent ultraheading white xs-pl-30 xs-pr-30 flex vertical-center largecaption-height text-uppercase wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0s">
+            <div class="panel ultraheading white xs-pl-30 xs-pr-30 flex vertical-center largecaption-height text-uppercase wow fadeInLeft hide-anim" data-wow-duration="1s" data-wow-delay="0s" style="background:rgba(<?php echo htmlencode($servicesRecord['box_color']) ?>);">
                     <div><strong><?php echo htmlencode($servicesRecord['service_tagline_1']) ?></strong><br><?php echo htmlencode($servicesRecord['service_tagline_2']) ?></div>
             </div>
         </div>
@@ -119,7 +138,7 @@
                     </div>
                     <div class="col-xs-12 visible-lg" style="margin-top:55px"></div>
                     <div class="col-xs-12 col-sm-6 text-right-not-xs text-left-xs xs-mt-15">
-						<a class="btn btn-black"><?php echo htmlencode($servicesRecord['body_call_to_action_1']) ?></a>
+						<a href="/contact/" class="btn btn-black">Request a Proposal</a>
                     </div>
                     <div class="col-xs-12 col-sm-6 text-left-not-xs text-left-xs xs-mt-15">
 						<a class="btn btn-light-blue"><?php echo htmlencode($servicesRecord['body_call_to_action_2']) ?></a>
@@ -145,7 +164,9 @@
     <!--========================================================
                               CONTACT
     =========================================================-->
-    <?php include "/_includes/contact.php" ?>
+    <section class="well-2 bgcover bg-fixed" style="background-image:url('/_img/contact_background.jpg');">
+    <?php include "_includes/contact_form.php" ?>
+    </section>
     
     <!--========================================================
                               FOOTER
@@ -161,5 +182,6 @@ $(document).ready(function() {
 	$('#menu-services').addClass('active');
 });
 </script>
+
 </body>
 </html>

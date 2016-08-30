@@ -54,5 +54,32 @@ $(document).ready(function(){
 });
 </script>
 
+<script>
+$(window).load( function() {
+	var currwidth = $(window).width();
+	$(window).resize(function() {
+		var currentwidth = $(window).width();
+		var difference = Math.abs(currwidth-currentwidth);
+		if (difference >= 100) {
+			location.reload();
+		}
+	});
+});
+</script>
+
+<!-- Show Arrows on Hover -->
+<script>
+$(window).load(function() {
+	$('.arrow-link')
+	.mouseover(function() {
+		$(this).find('.arrow-link-arrow').fadeIn(300);		
+	})
+	.mouseout(function() {
+		$(this).find('.arrow-link-copy').fadeIn(300);
+		$(this).find('.arrow-link-arrow').fadeOut(200);
+	});
+});
+</script>
+
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5228dad444d11fb9"></script>

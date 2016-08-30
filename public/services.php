@@ -24,6 +24,7 @@
 <html lang="en">
 <head>
 <?php include "_includes/head.php" ?>
+<link rel="stylesheet" href="/_libs/swipebox/css/swipebox.css">
 <title><?php echo htmlencode($services_pageRecord['title']) ?></title>
 </head>
 
@@ -50,14 +51,16 @@
                     </div>
                     <!-- Start Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 col-md-5 text-right hidden-xs hidden-sm">
-                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
+                    		<a href="https://vimeo.com/75332249" class="btn btn-light-blue xs-mt-5 swipebox" rel="youtube1">View Video</a>
+						<a href="/_img/mri_firm_profile_2015.pdf" target="_blank" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
                     </div>
                     <!-- End Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 xs-mt-15 semi"><?php echo htmlencode($services_pageRecord['main_second_subheader']) ?></div>
                     <div class="col-xs-12 xs-mt-15 intro gray thin"><?php echo ($services_pageRecord['main_intro_copy']) ?></div>
                     <!-- Start Scorecard and Firm Profile buttons for Tablet Down -->
                     <div class="col-xs-12 text-left-xs text-center-not-xs hidden-md hidden-lg">
-                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
+                    		<a href="https://vimeo.com/75332249" class="btn btn-light-blue xs-mt-5 swipebox" rel="youtube2">View Video</a>
+						<a href="/_img/mri_firm_profile_2015.pdf" target="_blank" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
                     </div>
                     <!-- End Scorecard and Firm Profile buttons for Tablet Down -->
 				</div>
@@ -74,14 +77,14 @@
                                     <div class="post " style="background-image:url('_img/so_database_mktg.jpg');">
                                     
                                         <div class="post_readmore_hover">
-                                        		<a href="services/brand-positioning.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Database-Marketing-5" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
                                         
                                         <img src="_img/so_database_mktg_overlay.png" alt="" class="imageoverlay">
 
                                         <div class="post_cnt">
                                             <h2>
-                                                <a href="services/database-marketing.php" class="white">
+                                                <a href="/page.php?Database-Marketing-5" class="white">
                                                 		<img src="_img/icon-database.png" alt=""><br>
                                                     <span class="text-uppercase strong">Database<br>Marketing<br></span><span class="adelle lightest-blue">Make the data<br>talk to you.</span>
                                                 </a>
@@ -89,28 +92,28 @@
                                         </div>
                                         
                                         <div class="post_readmore">
-                                        		<a href="services/database-marketing.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Database-Marketing-5" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
                                     </div>
                                     <div class="post " style="background-image:url('_img/so_brand_position.jpg');">
 
                                         <div class="post_readmore_hover">
-                                        		<a href="services/brand-positioning.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Brand-and-Positioning-2" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
 
                                         <img src="_img/so_brand_position_overlay.png" alt="" class="imageoverlay">
 
                                         <div class="post_cnt">
                                             <h2>
-                                                <a href="services/brand-positioning.php" class="white">
+                                                <a href="/page.php?Brand-and-Positioning-2" class="white">
                                                 		<img src="_img/icon-target.png" alt=""><br>
-                                                    <span class="text-uppercase strong">brand &amp;<br>positioning<br></span><span class="adelle lightest-blue">Create irrational loyalty.</span>
+                                                    <span class="text-uppercase strong">brand &amp;<br>positioning<br></span><span class="adelle yellow">Create irrational loyalty.</span>
                                                 </a>
                                             </h2>
                                         </div>
                                         
                                         <div class="post_readmore">
-                                        		<a href="services/brand-positioning.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Brand-and-Positioning-2" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -118,35 +121,35 @@
                                     <div class="post " style="background-image:url('_img/so_player_dev.jpg');">
                                         
                                         <div class="post_readmore_hover">
-                                        		<a href="services/brand-positioning.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Player-Development-7" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
 
                                         <img src="_img/so_player_dev_overlay.png" alt="" class="imageoverlay">
                                         
                                         <div class="post_cnt">
                                             <h2>
-                                                <a href="services/player-development.php" class="white">
+                                                <a href="/page.php?Player-Development-7" class="white">
                                                 		<img src="_img/icon-player.png" alt=""><br>
-                                                    <span class="text-uppercase strong">Player<br>Development<br></span><span class="adelle gray">Seek the right people.<br>Then connect.</span>
+                                                    <span class="text-uppercase strong">Player<br>Development<br></span><span class="adelle yellow">Seek the right people.<br>Then connect.</span>
                                                 </a>
                                             </h2>
                                         </div>
                                         
                                         <div class="post_readmore">
-                                        		<a href="services/player-development.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Player-Development-7" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
                                     </div>
-                                    <div class="post " style="background-image:url('_img/so_casino_adv.jpg');">
+                                    <div class="post casino-advertising" style="background-image:url('_img/so_casino_adv.jpg');">
 
                                         <div class="post_readmore_hover">
-                                        		<a href="services/brand-positioning.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Casino-Advertising-4" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
 
                                         <img src="_img/so_casino_adv_overlay.png" alt="" class="imageoverlay">
 
                                         <div class="post_cnt">
                                             <h2>
-                                                <a href="services/casino-advertising.php" class="white">
+                                                <a href="/page.php?Casino-Advertising-4" class="white">
                                                 		<img src="_img/icon-spade.png" alt=""><br>
                                                     <span class="text-uppercase strong">Casino<br>Advertising<br></span><span class="adelle gray">Strategic.<br>Inspired.<br>Compelling.</span>
                                                 </a>
@@ -154,7 +157,7 @@
                                         </div>
                                         
                                         <div class="post_readmore">
-                                        		<a href="services/casino-advertising.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Casino-Advertising-4" class="white"><img src="/_img/more-button.png"></a>
                                         </div>                                        
                                     </div>
                                 </div>
@@ -162,14 +165,14 @@
                                     <div class="post " style="background-image:url('_img/so_market_research.jpg');">
 
                                         <div class="post_readmore_hover">
-                                        		<a href="services/brand-positioning.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Market-Research-3" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
                                         
                                         <img src="_img/so_market_research_overlay.png" alt="" class="imageoverlay">                                        
 
                                         <div class="post_cnt">
                                             <h2>
-                                                <a href="services/market-research.php" class="white">
+                                                <a href="/page.php?Market-Research-3" class="white">
                                                 		<img src="_img/icon-spade.png" alt=""><br>
                                                     <span class="text-uppercase strong">market research<br></span><span class="adelle gray">We know gamblers.<br>They speak.<br>We listen.</span>
                                                 </a>
@@ -177,28 +180,28 @@
                                         </div>
                                         
                                         <div class="post_readmore">
-                                        		<a href="services/market-research.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Market-Research-3" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
                                     </div>
                                     <div class="post " style="background-image:url('_img/so_digital_serv.jpg');">
 
                                         <div class="post_readmore_hover">
-                                        		<a href="services/brand-positioning.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Digital-Services-8" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
 
                                         <img src="_img/so_digital_serv_overlay.png" alt="" class="imageoverlay">
 
                                         <div class="post_cnt">
                                             <h2>
-                                                <a href="services/digital-services.php" class="white">
+                                                <a href="/page.php?Digital-Services-8" class="white">
                                                 		<img src="_img/icon-digital-services.png" alt=""><br>
-                                                    <span class="text-uppercase strong">digital services<br></span><span class="adelle gold">Dynamic functionality creates a digital dialogue.</span>
+                                                    <span class="text-uppercase strong">digital services<br></span><span class="adelle yellow">Dynamic functionality creates a digital dialogue.</span>
                                                 </a>
                                             </h2>
                                         </div>
                                         
                                         <div class="post_readmore">
-                                        		<a href="services/digital-services.php" class="white"><img src="/_img/more-button.png"></a>
+                                        		<a href="/page.php?Digital-Services-8" class="white"><img src="/_img/more-button.png"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -219,6 +222,7 @@
 
 <?php include "_includes/script.php" ?>
 <script src="_js/script.js"></script>
+<script src="/_libs/swipebox/js/jquery.swipebox.js"></script>
 <script>
 $(document).ready(function() {
 	$('#menu-services').addClass('active');
@@ -231,13 +235,34 @@ $('.post').each(function() {
 		$(this).find('.post_readmore_hover').fadeIn(500);  
 		$(this).find('.post_cnt, .post_readmore').fadeOut(300);
 		$(this).find('.post_readmore').css({ 'z-index':10 });
+		$(this).find('.imageoverlay').css({
+			'opacity':'0'
+		});
 	  })
 	  .mouseleave(function() {
 		$(this).find('.post_readmore_hover').fadeOut(500);  
 		$(this).find('.post_cnt, .post_readmore').fadeIn(300);
 		$(this).find('.post_readmore').css({ 'z-index':0 });
+		$(this).find('.imageoverlay').css({
+			'opacity':'1'
+		});
 	  });
 });
 </script>
+<script type="text/javascript">
+;( function( $ ) {
+	$('.swipebox').swipebox({autoplayVideos: true});
+} )( jQuery );
+</script>
+<!-- Initial state for Casino Advertising -->
+<script>
+$(document).ready(function() {
+	$('.casino-advertising .post_cnt, .casino-advertising .post_readmore').fadeOut(100);
+	$('.casino-advertising .imageoverlay').css({
+		'opacity':'0'
+	});
+});
+</script>
+
 </body>
 </html>

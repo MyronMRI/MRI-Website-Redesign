@@ -37,6 +37,7 @@
 <html lang="en">
 <head>
 <?php include "_includes/head.php" ?>
+<link rel="stylesheet" href="/_libs/swipebox/css/swipebox.css">
 <title><?php echo htmlencode($detailRecord['title']) ?></title>
 </head>
 
@@ -63,14 +64,16 @@
                     </div>
                     <!-- Start Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 col-md-5 text-right hidden-xs hidden-sm">
-                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
+                    		<a href="https://vimeo.com/75332249" class="btn btn-light-blue xs-mt-5 swipebox" rel="youtube1">View Video</a>
+						<a href="/_img/mri_firm_profile_2015.pdf" target="_blank" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
                     </div>
                     <!-- End Scorecard and Firm Profile buttons for Desktop Up -->
                     <div class="col-xs-12 xs-mt-15 semi"><?php echo htmlencode($detailRecord['main_second_subheader']) ?></div>
                     <div class="col-xs-12 xs-mt-15 intro gray thin"><?php echo htmlencode($detailRecord['main_intro_copy']) ?></div>
                     <!-- Start Scorecard and Firm Profile buttons for Tablet Down -->
                     <div class="col-xs-12 text-left-xs text-center-not-xs hidden-md hidden-lg">
-                    		<a href="#" class="btn btn-light-blue xs-mt-5">View Video</a><a href="#" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
+                    		<a href="https://vimeo.com/75332249" class="btn btn-light-blue xs-mt-5 swipebox" rel="youtube2">View Video</a>
+						<a href="/_img/mri_firm_profile_2015.pdf" target="_blank" class="btn btn-black xs-mt-5 xs-ml-15">View Firm Profile</a>
                     </div>
                     <!-- End Scorecard and Firm Profile buttons for Tablet Down -->
 				</div>                
@@ -132,6 +135,7 @@
 
 <?php include "_includes/script.php" ?>
 <script src="_js/script.js"></script>
+<script src="/_libs/swipebox/js/jquery.swipebox.js"></script>
 <script src="/_js/modernizr.custom.js"></script>
 <script>
 $(document).ready(function() {
@@ -160,6 +164,10 @@ if ($(window).width() <= 768) {
 	$('.bio-modal .container').removeClass('container').addClass('container-fluid');
 }
 </script>
-
+<script type="text/javascript">
+;( function( $ ) {
+	$('.swipebox').swipebox({autoplayVideos: true});
+} )( jQuery );
+</script>
 </body>
 </html>

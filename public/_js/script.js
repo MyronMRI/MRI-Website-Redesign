@@ -165,6 +165,78 @@ include('/_js/jquery.easing.1.3.js');
 
 })(jQuery);
 
+(function ($) {
+    var o = document.getElementById("google-map-2");
+    if (o) {
+        include('//maps.google.com/maps/api/js?sensor=false');
+        include('/_js/jquery.rd-google-map.js');
+
+        $(document).ready(function () {
+            var o = $('#google-map');
+            if (o.length > 0) {
+                o.googleMap({
+                    styles: [{
+                        "stylers": [
+                            {
+                                "hue": "#ff1a00"
+                            },
+                            {
+                                "invert_lightness": true
+                            },
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "lightness": 33
+                            },
+                            {
+                                "gamma": 0.5
+                            }
+                        ]
+                    },
+                        {
+                            "featureType": "water",
+                            "elementType": "geometry",
+                            "stylers": [
+                                {
+                                    "color": "#2D333C"
+                                }
+                            ]
+                        }]
+                });
+            }
+        });
+    }
+})
+(jQuery);
+
+;
+(function ($) {
+    var o = $('.map');
+    if (o.length > 0) {
+        if ($(window).width() > 1199) {
+            var bp = $(window).outerWidth();
+            var bp1 = bp - 1200;
+            var bp2 = bp1/2;
+            var bp3 = bp2 + 456;
+
+            o.css('left', bp3);
+        }
+
+        $(window).resize(function () {
+            if ($(window).width() > 1199) {
+                var bp = $(window).outerWidth();
+                var bp1 = bp - 1200;
+                var bp2 = bp1/2;
+                var bp3 = bp2 + 456;
+
+                o.css('left', bp3);
+            }
+        });
+    }
+
+})(jQuery);
+
 /* WOW
  ========================================================*/
 ;

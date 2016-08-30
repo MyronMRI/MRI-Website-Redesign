@@ -5,17 +5,21 @@
             <div class="col-xs-12 white">
                 <!-- Start Footer on Tablet Up -->
                 <div class="hidden-xs">
-					<div class="flex vertical-bottom">
-						<div><strong class="ultraheading"><a href="tel:7023613850" class="telephone-number white">702.361.3850</a></strong></div>    
-                        <div><span class="megaheading">LAS VEGAS</span></div>
-                        <div><span class="megaheading">ATLANTIC CITY</span></div>
-                        <div><span class="megaheading">PHILADELPHIA</span></div>
-                        <div><span class="megaheading">@</span></div>
-                        <div class="megaheading"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                        <div class="megaheading"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        <div class="megaheading"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                        <div class="megaheading"><i class="fa fa-google-plus" aria-hidden="true"></i></div>
-                    </div>
+                		
+                <div class="outer">
+                <span class="inner ultraheading strong"><a href="tel:7023613850" class="telephone-number white xs-mb-0 xs-mt-0" style="text-decoration:none !important">702.361.3850</a></span>
+                <span class="inner benefitsheading">LAS&nbsp;VEGAS</span>
+                <span class="inner benefitsheading">ATLANTIC&nbsp;CITY</span>
+                <span class="inner benefitsheading">PHILADELPHIA</span>
+                <span class="inner benefitsheading">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter xs-ml-20" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin xs-ml-20" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus xs-ml-20" aria-hidden="true"></i>
+                </span>
+                <span class="finish"></span>
+                </div>
+
                 </div>
                 <!-- End Footer on Tablet Up -->
                 <!-- Start Footer on Mobile -->

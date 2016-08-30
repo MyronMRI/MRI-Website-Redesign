@@ -14,10 +14,12 @@
 .light-brown { color:@brand-light-brown !important; }
 .moss { color:@brand-moss !important; }
 .gold { color:@brand-gold !important; }
+.yellow { color:@brand-yellow !important; }
 .rust { color:@brand-rust !important; }
 .dark-brown { color:@brand-dark-brown !important; }
 .white { color:@brand-white !important; }
 .gray { color:#888888 !important; } 
+.black { color:@brand-black !important; }
 .light-gray { color:@brand-light-gray !important; } 
 .chai { color:@brand-chai !important; } 
 
@@ -30,6 +32,7 @@
 .bglight-brown { background:@brand-light-brown !important; }
 .bgmoss { background:@brand-moss !important; }
 .bggold { background:@brand-gold !important; }
+.bgyellow { background:@brand-yellow !important; }
 .bgrust { background:@brand-rust !important; }
 .bgdark-brown { background:@brand-dark-brown !important; }
 .bgwhite { background:@brand-white !important; }
@@ -41,7 +44,14 @@
 .bgblack-transparent { background:fade(@brand-black,60%); }
 .bgorange-transparent { background:fade(@brand-orange,70%); }
 .bgrust-transparent { background:fade(@brand-rust,45%); }
+.bgrust-transparent2 { background:fade(@brand-rust,85%); }
 .bgdark-blue-transparent { background:fade(@brand-dark-blue,50%); }
+
+/* Image Backgrounds */
+.bgequals { 
+	background:url('/_img/equals.png') no-repeat top center; background-size:contain;
+	@media screen and (max-width:@screen-sm) { background:none; }
+}
 
 /* Flex Box */
 .flex {
@@ -88,9 +98,16 @@
 .ultraheading { 
 	@media screen and (min-width:@screen-lg) { font-size:@font-size-base*2.375; }
 	@media screen and (min-width:@screen-md-min) and (max-width:@screen-md-max) { font-size:@font-size-base*2; }
-	@media screen and (min-width:@screen-sm-min) and (max-width:@screen-sm-max) { font-size:@font-size-base*1.5; }
-	@media screen and (min-width:@screen-xs-min) and (max-width:@screen-xs-max) { font-size:@font-size-base*1.25; }
+	@media screen and (max-width:@screen-sm) { font-size:@font-size-base*1.5; }
+	@media screen and (max-width:@screen-xs) { font-size:@font-size-base*1.25; }
 	&.samesize { font-size:@font-size-base*2.375; }
+}
+.benefitsheading { 
+	@media screen and (min-width:@screen-lg) { font-size:@font-size-base*1.5625; }
+	@media screen and (min-width:@screen-md-min) and (max-width:@screen-md-max) { font-size:@font-size-base*1.45; }
+	@media screen and (max-width:@screen-sm) { font-size:@font-size-base*1.4; }
+	@media screen and (max-width:@screen-xs) { font-size:@font-size-base*1.35; }
+	&.samesize { font-size:@font-size-base*1.5625; }
 }
 .megaheading {
 	@media screen and (min-width:@screen-lg) { font-size:@font-size-base*1.875; }
@@ -148,8 +165,23 @@
 	}
 }
 .largecaption-height {
-	@media screen and (min-width:@screen-md-min) { height: 440px; }
-	@media screen and (max-width:@screen-sm-max) { height: 240px; }
+	@media screen and (min-width:@screen-md-min) { height: 440px; line-height:1.25;  }
+	@media screen and (max-width:@screen-sm-max) { min-height: 300px; height:auto;  padding-top: 30px; padding-bottom: 30px; }
+}
+.largecaption-map {
+	@media screen and (min-width:@screen-lg-min) { width:440px; height: 440px; }
+	@media screen and (max-width:@screen-md-max) { width:100%; height:auto; padding-top: 30px; padding-bottom: 30px;}
+}
+
+/* Products Caption - 2nd Section in the Homepage */
+.products-caption {
+	@media screen and (min-width:@screen-lg) { height:440px; }
+	@media screen and (max-width:@screen-md-max) { min-height:440px; height:auto; }
+	@media screen and (max-width:@screen-xs-max) { padding-top: 30px; padding-bottom: 30px; }
+}
+.products-image {
+	@media screen and (min-width:@screen-lg) { width:460px !important; }
+	@media screen and (max-width:@screen-md-max) { width:455px !important; }
 }
 
 /* Background Cover */
@@ -213,6 +245,55 @@ main {
 	}
 	p {
 		margin-bottom:25px;
+	}
+}
+
+/* Gold overlay for Case Studies */
+.overlay-gold {
+	.overlay-gold-image, .project-type {
+		position:absolute;
+		top:0;
+		left:0;
+		display:none;
+	}
+	.project-type {
+		width:auto;
+		top:50%;
+		left: 20%;
+		right: 20%;
+		transform:translateY(-50%);
+		font-size:@font-size-base*1.625;
+		color:@brand-white;
+		line-height:1.625;
+	}
+}
+
+/* AddThis Adjustments */
+.addthis_sharing_toolbox {
+	clear:right !important;
+}
+
+/* Homepage animated arrows */
+.arrow-link {
+	.arrow-link-copy {}
+	.arrow-link-arrow {
+	}
+}
+
+/* Case Studies Project Type styling */
+.project-type {
+	line-height:1.45;
+	span.project-categories {
+		&:after {
+			content:"|";
+			margin: 0 10px;
+		}
+		&:last-of-type {
+			&:after {
+				content:"";
+				margin:0;
+			}
+		}
 	}
 }
 
